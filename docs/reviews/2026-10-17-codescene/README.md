@@ -21,6 +21,12 @@ Concrete examples:
 
 [Code Red](https://arxiv.org/abs/2203.04374), a peer-reviewed study of 39 commercial codebases, found low-quality code associated with **15× more defects** and **124% longer issue-resolution time in development**. These are study-wide associations, not measured RepoWise outcomes. The [Code Red white paper](https://codescene.com/hubfs/web_docs/Business-impact-of-code-quality.pdf) explains the delivery impact; [Business Costs of Technical Debt](https://codescene.com/hubfs/calculate-business-costs-of-technical-debt.pdf) explains prioritisation by development activity. That is why low health in frequently changed files matters.
 
+AI coding adds another reason to address these hotspots. [Agentic AI Coding: Best Practice Patterns for Speed with Quality](https://codescene.com/blog/agentic-ai-coding-best-practice-patterns-for-speed-with-quality) recommends checking Code Health before agent edits, safeguarding changes and re-measuring after refactoring.
+
+![CodeScene chart showing AI refactoring break rate falling as Code Health increases from 7 to 10](ai-refactoring-break-rate.png)
+
+*Chart: CodeScene ([source article](https://codescene.com/blog/agentic-ai-coding-best-practice-patterns-for-speed-with-quality); [underlying research](https://arxiv.org/abs/2601.02200)). The chart covers Code Health 7–10; it does not estimate failure rates for RepoWise’s lower-scoring hotspots.*
+
 **Recommendation:** use CodeScene to baseline these hotspots, prevent further health regressions in PRs and refactor them incrementally. [CodeScene is free for open-source projects](https://codescene.com/product/codescene-for-open-source), so you can run the analysis yourselves. Please also remove the broader superiority wording unless there is evidence supporting it.
 
 This review covers 19 selected files. Some score **10/10**; the project and hotspot averages have both improved slightly. Technical debt does not invalidate a benchmark. The objection is to the claim made about that benchmark.
