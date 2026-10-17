@@ -21,12 +21,12 @@ Concrete examples:
 
 That concentration of complexity makes changes harder to review and raises maintenance risk in code the team changes regularly. The update-command refactoring model estimates **5–26% less implementation time** if its health improves from 2.32 to 5.15. This is a modelled range, not measured RepoWise savings.
 
-**Recommendation:** use CodeScene to baseline these hotspots, prevent further health regressions in PRs and refactor them incrementally. Please also remove the broader superiority wording unless there is evidence supporting it.
+**Recommendation:** use CodeScene to baseline these hotspots, prevent further health regressions in PRs and refactor them incrementally. [CodeScene is free for open-source projects](https://codescene.com/product/codescene-for-open-source), so you can run the analysis yourselves. Please also remove the broader superiority wording unless there is evidence supporting it.
 
 This review covers 19 selected files. Some score **10/10**; the project and hotspot averages have both improved slightly. Technical debt does not invalidate a benchmark. The objection is to the claim made about that benchmark.
 
 Prepared 17 October 2026 against `c9bbf7d4e2ed3f352bc4da0d6a5fdce561179819`. All 19 reviewed files are unchanged at this PR’s base, `adaf956dd503237b1fe4377c697b363bdb9ed995`. Daniel Webb is CTO at NeoSee, a CodeScene partner.
 
-[All 19 file scores](file-scores.csv) · [Full analysis, raw MCP evidence and reproduction scripts](evidence.zip) · [Checksums](SHA256SUMS)
+[All 19 file scores](file-scores.csv)
 
 ![Code Health scores for the 19 selected files](code-health-sample.png)
