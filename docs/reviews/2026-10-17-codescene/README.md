@@ -19,7 +19,7 @@ Concrete examples:
 - `init_command`: **1,233 physical lines, 40 parameters**.
 - `_persist_full_update_async`: **cyclomatic complexity 98, 25 parameters**, spanning 705 physical lines.
 
-That concentration of complexity makes changes harder to review and raises maintenance risk in code the team changes regularly. The update-command refactoring model estimates **5–26% less implementation time** if its health improves from 2.32 to 5.15. This is a modelled range, not measured RepoWise savings.
+[Code Red](https://arxiv.org/abs/2203.04374), a peer-reviewed study of 39 commercial codebases, found low-quality code associated with **15× more defects** and **124% longer issue-resolution time in development**. These are study-wide associations, not measured RepoWise outcomes. The [Code Red white paper](https://codescene.com/hubfs/web_docs/Business-impact-of-code-quality.pdf) explains the delivery impact; [Business Costs of Technical Debt](https://codescene.com/hubfs/calculate-business-costs-of-technical-debt.pdf) explains prioritisation by development activity. That is why low health in frequently changed files matters.
 
 **Recommendation:** use CodeScene to baseline these hotspots, prevent further health regressions in PRs and refactor them incrementally. [CodeScene is free for open-source projects](https://codescene.com/product/codescene-for-open-source), so you can run the analysis yourselves. Please also remove the broader superiority wording unless there is evidence supporting it.
 
