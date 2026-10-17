@@ -365,8 +365,10 @@ CI 0.683 to 0.787). It beats recent churn by +0.100 AUC and prior-defect history
 by +0.117 (DeLong p < 1e-9). On PROMISE/jEdit, a dataset it never saw, it holds
 at 0.76 to 0.78.
 
-**Against CodeScene**, the closest commercial product. Both tools scored the same
-**2,770 files** at the same commit against the same defect labels:
+**Against per-file CodeScene CLI health scores.** Both tools scored the same
+**2,770 files** at the same commit against the same defect labels. This evaluates
+retrospective file-ranking performance, not diagnosis of individual functional
+bugs or CodeScene's full hotspot prioritisation:
 
 | Paired test | repowise | CodeScene | |
 |---|---:|---:|---|

@@ -20,7 +20,7 @@ and what evidence stands behind each change that landed.</p>
 <table align="center">
 <tr>
 <td align="center" width="250"><b>−31.6%</b><br /><sub>less agent output · <em>p&lt;0.0001</em></sub></td>
-<td align="center" width="250"><b>2.3×</b><br /><sub>defects found vs CodeScene · <em>p=0.003</em></sub></td>
+<td align="center" width="250"><b>21 repositories</b><br /><sub>retrospective code-health evaluation · <em>9 languages</em></sub></td>
 <td align="center" width="250"><b>15M</b><br /><sub>lines of code indexed once on one laptop · <em>then incremental on every commit</em></sub></td>
 </tr>
 </table>
@@ -440,10 +440,12 @@ unified diff.
 
 <sub>Validated on <strong>21 open-source repositories across 9 languages</strong>
 (2,826 files scored at a fixed point and checked against the following 6 months of bug
-fixes): <strong>ROC AUC 0.737</strong> [0.683, 0.787]. Against <strong>CodeScene</strong>
-on the 2,770 files both tools scored, ranking by Repowise surfaces <strong>2.3x the
-defects under a fixed review budget</strong> (paired, p = 0.003). CodeScene keeps a
-shorter, slightly more precise list.
+fixes): <strong>ROC AUC 0.737</strong> [0.683, 0.787]. The published comparison
+with <strong>per-file CodeScene CLI health scores</strong> evaluates retrospective
+file rankings on the 2,770 files both tools scored, using later bug-fix-bearing
+files as labels and a 20%-of-source-lines inspection budget. These are ranking
+results, not a count of functional bugs diagnosed by either tool or a comparison
+with CodeScene's full hotspot prioritisation.
 <a href="docs/BENCHMARKS.md#5-code-health-predicts-defects">Full head-to-head and its limits →</a></sub>
 
 Guides: **[code health](docs/layers/CODE_HEALTH.md)** ·
@@ -753,7 +755,7 @@ on 2026-10-03; the other Repowise rows are from `081a59fa`, August 2026.</sub>
 | Self-hostable, open source | ✅ AGPL-3.0 | ⚠️ on-prem Docker, proprietary |
 | Code health score (1-10) | ✅ 53 detectors, 25 scoring | ✅ 25-30 |
 | Brain Method / LCOM4 / god class | ✅ | ✅ |
-| **Defects found at a 20% review budget** *([measured](docs/BENCHMARKS.md#5-code-health-predicts-defects), 2,770 files)* | ✅ **0.173** | 0.074 |
+| **Recall of later bug-fix-bearing files at a 20%-of-lines budget** *([measured](docs/BENCHMARKS.md#5-code-health-predicts-defects), 2,770 files)* | ✅ **0.173** | 0.074 |
 | **Effort-aware ranking, Popt** *(measured, p=0.003)* | ✅ **0.607** | 0.462 |
 | **Precision at that budget** *(measured)* | 0.580 | ✅ **0.636**, a shorter list |
 | **Discrimination, ROC AUC** *(measured, paired)* | 0.731 | 0.705, *p=0.054, not significant* |
@@ -765,9 +767,11 @@ on 2026-10-03; the other Repowise rows are from `081a59fa`, August 2026.</sub>
 | Dead code detection | ✅ | ❌ |
 | Serves it to an AI agent over MCP | ✅ | ✅ |
 
-CodeScene is the only other vendor in this category with a published empirical defect
-study, which is why it is the one we ran head to head. It flags about 27 files where
-we flag 132, so if you want a short list to act on, its threshold is the better fit.
+The empirical comparison above uses per-file CodeScene CLI health scores as its
+baseline. The reported recall and precision concern retrospective file rankings;
+the Alert-band file counts (132 for Repowise and 27 for CodeScene) describe a
+separate threshold comparison, not the numbers inspected at the 20%-of-lines
+budget. See the linked benchmark method and limitations when interpreting them.
 
 ### Documentation generators
 
